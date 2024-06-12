@@ -1,5 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="registration.aspx.cs" Inherits="agro.login" %>
-
+﻿<%@ Page Language="C#" %>
 <%@Import Namespace="MySql.Data.MySqlClient" %>
 <%@Import Namespace="System" %>
 <%@Import Namespace="System.IO" %>
@@ -22,7 +21,7 @@
 <body>
         <form action="#" id="regisration" method="POST" runat="server">
             <div class="leftsi">
-                <h2>Register Here</h2>
+                <h2>Profile</h2>
                         <br>
                         <label style="margin-left:5%;" id="uname"> Name :</label>          <input type="text" runat="server" id="fname" name="fname"> 
                             <asp:RequiredFieldValidator ID="reqname" runat="server" ForeColor="Red" ControlToValidate="fname" ErrorMessage= " * " >  </asp:RequiredFieldValidator>
@@ -73,8 +72,8 @@
 
                         <label style="margin-left:5%;" for="Password" > Password:</label>                 <input type="password" runat="server" id="pword"  name="Password"> 
                         <asp:RequiredFieldValidator ID="reqpwd" runat="server" ForeColor="Red" ControlToValidate="pword" ErrorMessage= " * " >  </asp:RequiredFieldValidator><br />
-                      <!--  <asp:RegularExpressionValidator ID="revPassword" runat="server" ControlToValidate="pword" Font-Size="XX-Small" ForeColor="Red" ErrorMessage="Password contain at least 8 characters and at least 1 uppercase , 1 lowercase letter, and 1 digit" ValidationExpression="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$"></asp:RegularExpressionValidator>
-                -->
+                        <asp:RegularExpressionValidator ID="revPassword" runat="server" ControlToValidate="pword" Font-Size="XX-Small" ForeColor="Red" ErrorMessage="Password contain at least 8 characters and contain at least 1 uppercase , 1 lowercase letter, and 1 digit" ValidationExpression="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$"></asp:RegularExpressionValidator>
+
                             <br />
                 
                <br>
@@ -87,7 +86,7 @@
          <br />
 
           
-                        <input runat="server" type="submit" id="submitbtn" value="Register"><br><br>
+                        <input runat="server" type="submit" id="submitbtn" value="Update"><br><br>
           
 
                              
@@ -95,22 +94,7 @@
 
      if (Request["submitbtn"] != null)
      {
-         Session["gender"] = "male";
-         if(Request["female"] != null)
-             Session["gender"] = "female";
-
-
-         Session["fname"] = Request["fname"];
-         Session["utype"] = Request["utype"];
-         Session["dob"] = Request["dob"];
-         Session["contactno"] = Request["contactno"];
-         Session["email"] = Request["email"];
-         Session["pword"] = Request["pword"];
-         Session["addr"] = Request["address"];
-
-         Response.Write("utype:- " + Request["utype"]);
-
-         Response.Redirect("emailoneredirect.aspx");
+        
      }
 
        %>

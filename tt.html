@@ -1,0 +1,114 @@
+<html>
+
+<head></head>
+<style>
+    .quantity-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 100px;
+}
+
+.quantity-input {
+  text-align: center;
+  border: none;
+  width: 50%;
+}
+
+.minus-btn, .plus-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f5f5f5;
+  border: none;
+  width: 25%;
+  height: 100%;
+  cursor: pointer;
+  
+}
+
+.minus-btn:hover, .plus-btn:hover {
+  background-color: #e6e6e6;
+}
+a {
+  display: inline-block;
+  height: 100px;
+  width: 100px;
+  margin: 50px;
+
+  border-radius: 190px;
+  border: 3px solid #27ae60;
+  background: #2ecc71;
+  text-align: center;
+
+  text-decoration: none;
+  color: #27ae60;
+
+  transition: all .2s;
+}
+
+i {
+  line-height: 100px;
+  font-size: 22px;
+  font-weight: bold;
+  font-style: normal;
+  transition: all .1s;
+}
+.circle-stroke {
+  width: 50px;
+  height: 50px;
+  background: none;
+  color: #333;
+  border: 1px solid #333;
+  border-radius: 30px;
+  font-size: 16px; }
+
+  .buttons {
+  width: 20%;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center; }
+
+.one {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center; }
+
+  
+</style>
+
+<body>
+    <form>
+        <img src="admin/productImg/euip1.png">
+
+        <div class="quantity-box">
+            <button class="minus-btn" type="button" name="button">-</button>
+            <input class="quantity-input" type="number" name="quantity" value="1">
+            <button class="plus-btn" type="button" name="button">+</button>
+          </div>
+
+          <div class="buttons">
+            <div class="one">
+                <a href="#"><button class="circle-stroke">+</button></a>
+            </div>
+
+    </form>
+</body>
+
+</html>
+
+
+SELECT o.order_id, o.customer_id, o.order_date, o.total_amount, oi.product_id, oi.quantity, oi.price, p.product_name, p.category, p.description FROM orders o JOIN order_items oi ON o.order_id = oi.order_id JOIN products p ON oi.product_id = p.product_id;
+select sum(p.price) as total ,count(ci.pid) as prod from cart as c join cart_items as ci on c.Cart_id=ci.cart_id join products as p on ci.pid=p.pid join register as r on c.customer_id=r.id where email='20bmiit011@gmail.com'

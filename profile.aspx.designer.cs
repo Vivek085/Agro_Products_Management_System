@@ -11,7 +11,7 @@ namespace agro
 {
 
 
-    public partial class login
+    public partial class profile
     {
 
         /// <summary>
